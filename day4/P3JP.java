@@ -3,12 +3,10 @@ import java.util.*;
 class Data 
 {
     public boolean flag = true;
-    public void display_java() 
+    synchronized public void display_java() 
     {
         while(true)
         {   
-            synchronized(this)
-            {
                 while (!flag) 
                 {
                     try 
@@ -21,13 +19,10 @@ class Data
                 System.out.print("JAVA");
                 notify();
             }
-        }
     }
-    public void display_programming() 
+    synchronized public void display_programming() 
     {
         while(true){   
-            synchronized(this)
-            {
                 while(flag) 
                 {
                     try 
@@ -39,7 +34,6 @@ class Data
                 flag = true;
                 System.out.println(" PROGRAMMING");
                 notify();
-            }
         }
     }
 }
