@@ -1,3 +1,4 @@
+package lab;
 import java.util.*;
 
 abstract class Shape
@@ -65,6 +66,7 @@ public class P4Shape {
         int c;
         System.out.println("Enter choice\n1.Rectangle\n2.Triangle\n3.Square\n");
         c=sc.nextInt();
+        Shape ref;
         switch(c)
         {
         case 1: 
@@ -73,8 +75,9 @@ public class P4Shape {
                 x=sc.nextDouble();
                 y=sc.nextDouble();
                 Rectangle R = new Rectangle(x,y);
-                R.calculateArea();
-                R.displayDetails();
+                ref = R;
+                ref.calculateArea();
+                ref.displayDetails();
             }
             break;
         case 2:
@@ -83,8 +86,9 @@ public class P4Shape {
                 x=sc.nextDouble();
                 y=sc.nextDouble();
                 Triangle T = new Triangle(x,y);
-                T.calculateArea();
-                T.displayDetails();
+                ref = T;
+                ref.calculateArea();
+                ref.displayDetails();
             }
             break;
         case 3:
@@ -92,8 +96,9 @@ public class P4Shape {
                 System.out.println("Enter side: ");
                 x=sc.nextDouble();
                 Square S = new Square(x);
-                S.calculateArea();
-                S.displayDetails();
+                ref = S;
+                ref.calculateArea();
+                ref.displayDetails();
             }
             break;
         default:
